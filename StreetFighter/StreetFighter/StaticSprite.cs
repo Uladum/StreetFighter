@@ -1,0 +1,3 @@
+﻿class StaticSprite : Sprite
+{
+}
