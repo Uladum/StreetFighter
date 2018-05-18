@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * V0.04 : Updated the WriteText method. 
+ */
+
+using System;
 using Tao.Sdl;
 /**
 * This class will manage every hardware issue: screen resolution, keyboard input and some other aspects
@@ -112,11 +116,23 @@ class Hardware
     }
 
     // Writes a text in the specified coordinates
-    public void WriteText(IntPtr textAsImage, short x, short y)
+    public void WriteText(string txt,
+            short x, short y, byte r, byte g, byte b, Font f)
     {
-        Sdl.SDL_Rect src = new Sdl.SDL_Rect(0, 0, screenWidth, screenHeight);
-        Sdl.SDL_Rect dest = new Sdl.SDL_Rect(x, y, screenWidth, screenHeight);
+        Sdl.SDL_Color color = new Sdl.SDL_Color(r, g, b);
+        IntPtr textAsImage = SdlTtf.TTF_RenderText_Solid(
+            f.GetFontType(), txt, color);
+        if (textAsImage == IntPtr.Zero)
+            Environment.Exit(5);
+
+        Sdl.SDL_Rect src = new Sdl.SDL_Rect(0, 0, screenWidth,
+            screenHeight);
+        Sdl.SDL_Rect dest = new Sdl.SDL_Rect(x, y, screenWidth,
+            screenHeight);
+
         Sdl.SDL_BlitSurface(textAsImage, ref src, screen, ref dest);
+
+        Sdl.SDL_FreeSurface(textAsImage);
     }
 
     // Writes a line in the specified coordinates, with the specified color and alpha
