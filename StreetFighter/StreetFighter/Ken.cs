@@ -1,4 +1,7 @@
-﻿class Ken : MainCharacter
+﻿/*
+ * V0.05 : Sprites of the punch and kick implemented
+ */
+class Ken : MainCharacter
 {
     public Ken()
     {

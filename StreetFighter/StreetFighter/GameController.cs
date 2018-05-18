@@ -25,8 +25,8 @@ class GameController
         do
         {
             menu.Show();
-            if (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE))
-            {
+            //if (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE))
+            //{
                 if (menu.MenuOption == 0 &&
                      (hardware.KeyPressed() == Sdl.SDLK_SPACE))
                 {
@@ -47,8 +47,7 @@ class GameController
                 {
                     menu.Exit = true;
                 }
-                    
-            }
+            //}
         } while (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));
     }
 }

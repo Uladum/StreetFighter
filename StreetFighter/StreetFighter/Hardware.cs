@@ -1,5 +1,6 @@
 ﻿/*
  * V0.05 : Added new constant KEY_Q
+ *         Added new constant KEY_W
  * 
  * V0.04 : Updated the WriteText method. 
  */

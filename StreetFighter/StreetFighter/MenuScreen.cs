@@ -40,8 +40,8 @@ class MenuScreen : Screen
 
         do
         {
-            if (!hardware.IsKeyPressed(Sdl.SDLK_ESCAPE))
-            {
+            //if (!hardware.IsKeyPressed(Sdl.SDLK_ESCAPE))
+            //{
                 if ((hardware.KeyPressed() == Sdl.SDLK_DOWN) && 
                     MenuOption < 4)
                 {
@@ -53,7 +53,7 @@ class MenuScreen : Screen
                     MenuOption--;
                 }
                 System.Console.WriteLine(MenuOption);
-            }
+            //}
         } while (!hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));
     }
 }

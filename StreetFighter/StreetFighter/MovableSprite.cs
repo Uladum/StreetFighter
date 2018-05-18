@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿/*
+ * V0.05 : Added KICK and PUNCH to the enum
+ */
 class MovableSprite : Sprite
 {
     const byte TOTAL_MOVEMENTS = 4;

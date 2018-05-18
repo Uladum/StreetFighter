@@ -1,4 +1,7 @@
-﻿using System.Threading;
+﻿/*
+ * V0.05 : Improved the punch and kick animation 
+ */
+using System.Threading;
 class GameScreen : Screen
 {
     Image imgBackgroud;
