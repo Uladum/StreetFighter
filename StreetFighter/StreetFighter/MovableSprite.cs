@@ -9,7 +9,7 @@ class MovableSprite : Sprite
     const byte TOTAL_MOVEMENTS = 4;
     const byte SPRITE_CHANGE = 4;
 
-    public enum SpriteMovement { LEFT };
+    public enum SpriteMovement { LEFT, KICK, PUNCH };
     public SpriteMovement CurrentDirection { get; set; }
     public byte CurrentSprite { get; set; }
 

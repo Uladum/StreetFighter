@@ -1,5 +1,4 @@
-﻿
-
+﻿using System.Threading;
 class GameScreen : Screen
 {
     Image imgBackgroud;
@@ -15,6 +14,8 @@ class GameScreen : Screen
     {
         bool left = hardware.IsKeyPressed(Hardware.KEY_LEFT);
         bool right = hardware.IsKeyPressed(Hardware.KEY_RIGHT);
+        bool kick = hardware.IsKeyPressed(Hardware.KEY_Q);
+        bool punch = hardware.IsKeyPressed(Hardware.KEY_W);
 
         if (left)
         {
@@ -32,6 +33,10 @@ class GameScreen : Screen
             character.Animate(MovableSprite.SpriteMovement.LEFT);
         if(right)
             character.Animate(MovableSprite.SpriteMovement.LEFT);
+        if (kick)
+            character.Animate(MovableSprite.SpriteMovement.KICK);
+        if (punch)
+            character.Animate(MovableSprite.SpriteMovement.PUNCH);
     }
 
 
@@ -57,6 +62,8 @@ class GameScreen : Screen
             oldY = character.Y;
             moveCharacter();
 
+
+            Thread.Sleep(10);
         } while (!gameOver && !hardware.IsKeyPressed(Hardware.KEY_ESC));
     }
 }

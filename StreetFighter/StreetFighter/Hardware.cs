@@ -1,4 +1,6 @@
 ﻿/*
+ * V0.05 : Added new constant KEY_Q
+ * 
  * V0.04 : Updated the WriteText method. 
  */
 
@@ -15,6 +17,8 @@ class Hardware
     public const int KEY_LEFT = Sdl.SDLK_LEFT;
     public const int KEY_RIGHT = Sdl.SDLK_RIGHT;
     public const int KEY_SPACE = Sdl.SDLK_SPACE;
+    public const int KEY_Q = Sdl.SDLK_q;
+    public const int KEY_W = Sdl.SDLK_w;
 
     short screenWidth;
     short screenHeight;
