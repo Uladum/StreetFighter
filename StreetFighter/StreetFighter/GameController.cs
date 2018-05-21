@@ -22,7 +22,8 @@ class GameController
         GameScreen game = new GameScreen(hardware);
 
         intro.Show();
-        do
+        game.Show();
+        /*do
         {
             menu.Show();
             //if (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE))
@@ -48,6 +49,6 @@ class GameController
                     menu.Exit = true;
                 }
             //}
-        } while (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));
+        } while (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));*/
     }
 }

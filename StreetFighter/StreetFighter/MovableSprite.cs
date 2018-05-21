@@ -1,12 +1,14 @@
 ﻿/*
+ * V0.06 : Added JUMP
+ * 
  * V0.05 : Added KICK and PUNCH to the enum
  */
 class MovableSprite : Sprite
 {
-    const byte TOTAL_MOVEMENTS = 4;
+    const byte TOTAL_MOVEMENTS = 6;
     const byte SPRITE_CHANGE = 4;
 
-    public enum SpriteMovement { LEFT, KICK, PUNCH };
+    public enum SpriteMovement { LEFT, KICK, PUNCH , JUMP, FLIP_FORWARDS};
     public SpriteMovement CurrentDirection { get; set; }
     public byte CurrentSprite { get; set; }
 

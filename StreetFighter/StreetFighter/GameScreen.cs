@@ -19,6 +19,7 @@ class GameScreen : Screen
         bool right = hardware.IsKeyPressed(Hardware.KEY_RIGHT);
         bool kick = hardware.IsKeyPressed(Hardware.KEY_Q);
         bool punch = hardware.IsKeyPressed(Hardware.KEY_W);
+        bool jump = hardware.IsKeyPressed(Hardware.KEY_SPACE);
 
         if (left)
         {
@@ -33,13 +34,20 @@ class GameScreen : Screen
         }
 
         if (left)
+        {
             character.Animate(MovableSprite.SpriteMovement.LEFT);
+            if (jump)
+                character.Animate(MovableSprite.SpriteMovement.FLIP_FORWARDS);
+        }
+
         if(right)
             character.Animate(MovableSprite.SpriteMovement.LEFT);
         if (kick)
             character.Animate(MovableSprite.SpriteMovement.KICK);
         if (punch)
             character.Animate(MovableSprite.SpriteMovement.PUNCH);
+        if (jump)
+            character.Animate(MovableSprite.SpriteMovement.JUMP);
     }
 
 
