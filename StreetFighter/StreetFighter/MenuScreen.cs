@@ -46,22 +46,22 @@ class MenuScreen : Screen
         {
             key = hardware.KeyPressed();
             if (key == Sdl.SDLK_DOWN &&
-                MenuOption < 4)
+                MenuOption < 3)
             {
                 MenuOption++;
-                imgSelectOption.MoveTo(80, (short)(imgSelectOption.Y - 40));
+                imgSelectOption.MoveTo(400, (short)(imgSelectOption.Y + 40));
             }
             else if (key == Sdl.SDLK_UP &&
-                MenuOption >= 0)
+                MenuOption > 0)
             {
                 MenuOption--;
-                imgSelectOption.MoveTo(80, (short)(imgSelectOption.Y + 40));
+                imgSelectOption.MoveTo(400, (short)(imgSelectOption.Y - 40));
             }
             else if (key == Sdl.SDLK_ESCAPE)
             {
                 Exit = true;
             }
         }
-        while (!Exit);
+        while (!Exit && key == Sdl.SDLK_SPACE);
     }
 }
