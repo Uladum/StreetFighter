@@ -24,24 +24,25 @@ class MenuScreen : Screen
     public override void Show()
     {
         // Drawing the menu texts
-        hardware.ClearScreen();
-        hardware.DrawImage(menuImage);
-        hardware.DrawImage(imgSelectOption);
-        hardware.WriteText("Story mode",
-            60, 200, 0, 0, 102, font);
-        hardware.WriteText("2 player mode",
-            60, 240, 0, 0, 102, font);
-        hardware.WriteText("Tutorial",
-            60, 280, 0, 0, 102, font);
-        hardware.WriteText("Exit",
-            60, 320, 0, 0, 102, font);
-        hardware.UpdateScreen();
+        
 
         int key;
         bool spacePressed = false;
 
         do
         {
+            hardware.ClearScreen();
+            hardware.DrawImage(menuImage);
+            hardware.DrawImage(imgSelectOption);
+            hardware.WriteText("Story mode",
+                60, 200, 0, 0, 102, font);
+            hardware.WriteText("2 player mode",
+                60, 240, 0, 0, 102, font);
+            hardware.WriteText("Tutorial",
+                60, 280, 0, 0, 102, font);
+            hardware.WriteText("Exit",
+                60, 320, 0, 0, 102, font);
+            hardware.UpdateScreen();
 
             key = hardware.KeyPressed();
             if (key == Sdl.SDLK_DOWN &&
