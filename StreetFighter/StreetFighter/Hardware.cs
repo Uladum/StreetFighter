@@ -20,6 +20,7 @@ class Hardware
     public const int KEY_SPACE = Sdl.SDLK_SPACE;
     public const int KEY_Q = Sdl.SDLK_q;
     public const int KEY_W = Sdl.SDLK_w;
+    public const int KEY_E = Sdl.SDLK_e;
 
     short screenWidth;
     short screenHeight;

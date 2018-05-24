@@ -32,7 +32,7 @@ class IntroScreen : Screen
         hardware.WriteText("THE DAM FIGHTERS",
             60, 150, 0, 0, 102, bigFont);
         hardware.UpdateScreen();
-        Thread.Sleep(7000);
+        Thread.Sleep(3000);
     }
 }
 

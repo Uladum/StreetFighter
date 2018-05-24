@@ -76,6 +76,9 @@
     <Content Include="imgs\background2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="imgs\choose_player.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgs\fighter1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -88,6 +91,7 @@
     <Content Include="imgs\menuImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="imgs\spritesheed-ryu.png" />
     <Content Include="libfreetype-6.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

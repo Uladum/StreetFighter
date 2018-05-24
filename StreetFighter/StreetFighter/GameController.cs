@@ -22,33 +22,27 @@ class GameController
         GameScreen game = new GameScreen(hardware);
 
         intro.Show();
-        game.Show();
-        /*do
+        int key;
+        do
         {
+            key = hardware.KeyPressed();
             menu.Show();
-            //if (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE))
-            //{
-                if (menu.MenuOption == 0 &&
-                     (hardware.KeyPressed() == Sdl.SDLK_SPACE))
-                {
-                    game.Show();
-                }
-                else if (menu.MenuOption == 1 &&
-                     (hardware.KeyPressed() == Sdl.SDLK_SPACE))
-                {
-                    selectScreen.Show();
-                }
-                else if(menu.MenuOption == 2 &&
-                     (hardware.KeyPressed() == Sdl.SDLK_SPACE))
-                {
-                    selectScreen.Show();
-                }
-                else if(menu.MenuOption == 3 &&
-                    (hardware.KeyPressed() == Sdl.SDLK_SPACE))
-                {
-                    menu.Exit = true;
-                }
-            //}
-        } while (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));*/
+            if (menu.MenuOption == 0 && key == Sdl.SDLK_SPACE)
+            {
+                game.Show();
+            }
+            else if (menu.MenuOption == 1 && key == Sdl.SDLK_SPACE)
+            {
+                selectScreen.Show();
+            }
+            else if (menu.MenuOption == 2 && key == Sdl.SDLK_SPACE)
+            {
+                selectScreen.Show();
+            }
+            else if (menu.MenuOption == 3 && key == Sdl.SDLK_SPACE)
+            {
+                menu.Exit = true;
+            }
+        } while (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));
     }
 }

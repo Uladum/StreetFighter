@@ -20,6 +20,7 @@ class GameScreen : Screen
         bool kick = hardware.IsKeyPressed(Hardware.KEY_Q);
         bool punch = hardware.IsKeyPressed(Hardware.KEY_W);
         bool jump = hardware.IsKeyPressed(Hardware.KEY_SPACE);
+        bool high_defense = hardware.IsKeyPressed(Hardware.KEY_E);
 
         if (left)
         {
@@ -34,20 +35,23 @@ class GameScreen : Screen
         }
 
         if (left)
+            character.Animate(MovableSprite.SpriteMovement.LEFT);
+
+        if (right)
         {
             character.Animate(MovableSprite.SpriteMovement.LEFT);
             if (jump)
                 character.Animate(MovableSprite.SpriteMovement.FLIP_FORWARDS);
         }
-
-        if(right)
-            character.Animate(MovableSprite.SpriteMovement.LEFT);
+            
         if (kick)
             character.Animate(MovableSprite.SpriteMovement.KICK);
         if (punch)
             character.Animate(MovableSprite.SpriteMovement.PUNCH);
         if (jump)
             character.Animate(MovableSprite.SpriteMovement.JUMP);
+        if(high_defense)
+            character.Animate(MovableSprite.SpriteMovement.PUNCH);
     }
 
 
@@ -76,5 +80,5 @@ class GameScreen : Screen
 
             Thread.Sleep(10);
         } while (!gameOver && !hardware.IsKeyPressed(Hardware.KEY_ESC));
-    }
+      }
 }
