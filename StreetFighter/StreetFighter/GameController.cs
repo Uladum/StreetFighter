@@ -12,6 +12,7 @@ class GameController
 {
     public const short SCREEN_WIDTH = 800;
     public const short SCREEN_HEIGHT = 500;
+    bool exit = false;
 
     public void Start()
     {
@@ -25,24 +26,22 @@ class GameController
         int key;
         do
         {
-            key = hardware.KeyPressed();
             menu.Show();
-            if (menu.MenuOption == 0 && key == Sdl.SDLK_SPACE)
+            switch (menu.MenuOption)
             {
-                game.Show();
+                case 0:
+                    game.Show();
+                    break;
+                case 1:
+                    selectScreen.Show();
+                    break;
+                case 2:
+                    selectScreen.Show();
+                    break;
+                case 3:
+                    exit = true;
+                    break;
             }
-            else if (menu.MenuOption == 1 && key == Sdl.SDLK_SPACE)
-            {
-                selectScreen.Show();
-            }
-            else if (menu.MenuOption == 2 && key == Sdl.SDLK_SPACE)
-            {
-                selectScreen.Show();
-            }
-            else if (menu.MenuOption == 3 && key == Sdl.SDLK_SPACE)
-            {
-                menu.Exit = true;
-            }
-        } while (!menu.Exit || !hardware.IsKeyPressed(Sdl.SDLK_ESCAPE));
+        } while (!exit);
     }
 }

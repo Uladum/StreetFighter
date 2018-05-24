@@ -10,7 +10,6 @@ class MenuScreen : Screen
     protected Font font;
     protected Font bigFont;
     public byte MenuOption { get; set; }
-    public bool Exit { get; set; }
 
     public MenuScreen(Hardware hardware) : base(hardware)
     {
@@ -20,7 +19,6 @@ class MenuScreen : Screen
         font = new Font("font/chargen.ttf", 40);
         bigFont = new Font("font/chargen.ttf", 70);
         MenuOption = 0;
-        Exit = false;
     }
 
     public override void Show()
@@ -39,11 +37,12 @@ class MenuScreen : Screen
             60, 320, 0, 0, 102, font);
         hardware.UpdateScreen();
 
-        Exit = false;
-
         int key;
+        bool spacePressed = false;
+
         do
         {
+
             key = hardware.KeyPressed();
             if (key == Sdl.SDLK_DOWN &&
                 MenuOption < 3)
@@ -57,11 +56,12 @@ class MenuScreen : Screen
                 MenuOption--;
                 imgSelectOption.MoveTo(400, (short)(imgSelectOption.Y - 40));
             }
-            else if (key == Sdl.SDLK_ESCAPE)
+            else if (key == Sdl.SDLK_SPACE)
             {
-                Exit = true;
+                spacePressed = true;
             }
+            System.Console.WriteLine(MenuOption);
         }
-        while (!Exit && key == Sdl.SDLK_SPACE);
+        while (!spacePressed);
     }
 }
