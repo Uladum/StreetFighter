@@ -6,7 +6,7 @@ class PlayerSelectScreen : Screen
 
     public PlayerSelectScreen(Hardware hardware) : base(hardware)
     {
-        imgBackground = new Image("imgs/background2.png", 932, 600);
+        imgBackground = new Image("imgs/player_select.png", 800, 603);
     }
 
     public override void Show()

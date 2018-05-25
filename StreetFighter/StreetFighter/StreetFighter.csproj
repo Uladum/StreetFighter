@@ -91,6 +91,9 @@
     <Content Include="imgs\menuImage.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="imgs\player_select.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgs\spritesheed-ryu.png" />
     <Content Include="libfreetype-6.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

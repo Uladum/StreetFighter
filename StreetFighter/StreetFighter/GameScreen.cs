@@ -2,6 +2,8 @@
  * V0.05 : Improved the punch and kick animation 
  */
 using System.Threading;
+using Tao.Sdl;
+
 class GameScreen : Screen
 {
     Image imgBackgroud;
@@ -58,12 +60,14 @@ class GameScreen : Screen
     public override void Show()
     {
         bool gameOver = false;
+        int key;
 
         character.MoveTo(200, 500);
 
         do
         {
             short oldX, oldY;
+            key = hardware.KeyPressed();
 
             
             //Draw everything
@@ -77,8 +81,11 @@ class GameScreen : Screen
             oldY = character.Y;
             moveCharacter();
 
+            if (key == Sdl.SDLK_ESCAPE)
+                gameOver = true;
+
 
             Thread.Sleep(10);
-        } while (!gameOver && !hardware.IsKeyPressed(Hardware.KEY_ESC));
+        } while (!gameOver);
       }
 }

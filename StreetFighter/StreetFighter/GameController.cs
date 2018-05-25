@@ -36,7 +36,7 @@ class GameController
                     selectScreen.Show();
                     break;
                 case 2:
-                    selectScreen.Show();
+                    game.Show();
                     break;
                 case 3:
                     exit = true;
