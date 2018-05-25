@@ -59,7 +59,7 @@ class GameScreen : Screen
 
     public override void Show()
     {
-        bool gameOver = false;
+        bool gameOver;
         int key;
 
         character.MoveTo(200, 500);
@@ -67,6 +67,7 @@ class GameScreen : Screen
         do
         {
             short oldX, oldY;
+            gameOver = false;
             key = hardware.KeyPressed();
 
             
@@ -77,12 +78,14 @@ class GameScreen : Screen
                     character.SpriteX, character.SpriteY, Sprite.SPRITE_WIDTH, Sprite.SPRITE_HEIGHT);
             hardware.UpdateScreen();
 
+            if (key == Sdl.SDLK_ESCAPE)
+                gameOver = true;
+
             oldX = character.X;
             oldY = character.Y;
             moveCharacter();
 
-            if (key == Sdl.SDLK_ESCAPE)
-                gameOver = true;
+            
 
 
             Thread.Sleep(10);
