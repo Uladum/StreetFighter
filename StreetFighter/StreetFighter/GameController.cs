@@ -17,7 +17,7 @@ class GameController
     public void Start()
     {
         Hardware hardware = new Hardware(800, 600, 24, false);
-        IntroScreen intro = new IntroScreen(hardware);
+        IntroScreen intro = new IntroScreen(hardware,"docs/sentece.txt");
         MenuScreen menu = new MenuScreen(hardware);
         PlayerSelectScreen selectScreen = new PlayerSelectScreen(hardware);
         GameScreen game = new GameScreen(hardware);

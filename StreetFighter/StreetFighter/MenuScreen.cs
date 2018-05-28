@@ -61,7 +61,6 @@ class MenuScreen : Screen
             {
                 spacePressed = true;
             }
-            System.Console.WriteLine(MenuOption);
         }
         while (!spacePressed);
     }

@@ -73,6 +73,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="docs\sentence.txt" />
     <Content Include="imgs\background2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
