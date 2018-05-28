@@ -32,7 +32,7 @@ class IntroScreen : Screen
         // Draws the intro image and the title of the game and waits a bit more.
         hardware.ClearScreen();
         hardware.DrawImage(introImage);
-        hardware.WriteText("THE DAM FIGHTERS",
+        hardware.WriteText(lines[1],
             60, 150, 0, 0, 102, bigFont);
         hardware.UpdateScreen();
         Thread.Sleep(3000);
