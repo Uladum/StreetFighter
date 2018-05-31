@@ -32,17 +32,7 @@ class MenuScreen : Screen
         do
         {
             hardware.ClearScreen();
-            hardware.DrawImage(menuImage);
-            hardware.DrawImage(imgSelectOption);
-            hardware.WriteText("Story mode",
-                60, 200, 0, 0, 102, font);
-            hardware.WriteText("2 player mode",
-                60, 240, 0, 0, 102, font);
-            hardware.WriteText("Tutorial",
-                60, 280, 0, 0, 102, font);
-            hardware.WriteText("Exit",
-                60, 320, 0, 0, 102, font);
-            hardware.UpdateScreen();
+            DrawLanguageText(Game.language);
 
             key = hardware.KeyPressed();
             if (key == Sdl.SDLK_DOWN &&
@@ -61,7 +51,43 @@ class MenuScreen : Screen
             {
                 spacePressed = true;
             }
+            else if (key == Sdl.SDLK_l)
+            {
+                Game.SetLanguage("esp");
+            }
         }
         while (!spacePressed);
+    }
+
+    public void DrawLanguageText(string lan)
+    {
+        if (lan == "eng")
+        {
+            hardware.DrawImage(menuImage);
+            hardware.DrawImage(imgSelectOption);
+            hardware.WriteText("Story mode",
+                60, 200, 0, 0, 102, font);
+            hardware.WriteText("2 player mode",
+                60, 240, 0, 0, 102, font);
+            hardware.WriteText("Tutorial",
+                60, 280, 0, 0, 102, font);
+            hardware.WriteText("Exit",
+                60, 320, 0, 0, 102, font);
+            hardware.UpdateScreen();
+        }
+        else if (lan == "esp")
+        {
+            hardware.DrawImage(menuImage);
+            hardware.DrawImage(imgSelectOption);
+            hardware.WriteText("Modo historia",
+                60, 200, 0, 0, 102, font);
+            hardware.WriteText("2 jugadores",
+                60, 240, 0, 0, 102, font);
+            hardware.WriteText("Tutorial",
+                60, 280, 0, 0, 102, font);
+            hardware.WriteText("Salir",
+                60, 320, 0, 0, 102, font);
+            hardware.UpdateScreen();
+        }
     }
 }

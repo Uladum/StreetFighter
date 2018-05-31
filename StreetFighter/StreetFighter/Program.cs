@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StreetFighter
+﻿
+class Game
 {
-    class Game
+    public static string language;
+
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            GameController controller = new GameController();
-            controller.Start();
-        }
+        language = "eng";
+
+        GameController controller = new GameController();
+        controller.Start();
+    }
+
+    public static void SetLanguage(string lang)
+    {
+        language = lang;
     }
 }
