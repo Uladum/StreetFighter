@@ -74,9 +74,6 @@
     <None Include="font\menu_text.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="font\SSF4 ABUKET.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="imgs\background2.png">

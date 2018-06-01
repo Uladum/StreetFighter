@@ -15,7 +15,7 @@ class MenuScreen : Screen
     {
         menuImage = new Image("imgs/background2.png", 932, 600);
         imgSelectOption = new Image("imgs/choose_player.png", 48, 48);
-        imgSelectOption.MoveTo(400, 200);
+        imgSelectOption.MoveTo(300, 200);
         font = new Font("font/menu_text.ttf", 40);
         bigFont = new Font("font/chargen.ttf", 70);
         MenuOption = 0;

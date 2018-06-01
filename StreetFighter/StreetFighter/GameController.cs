@@ -23,10 +23,11 @@ class GameController
         GameScreen game = new GameScreen(hardware);
 
         intro.Show();
-        menu.Show();
 
         do
         {
+            menu.Show();
+
             switch (menu.MenuOption)
             {
                 case 0:
