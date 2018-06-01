@@ -12,7 +12,15 @@ class GameScreen : Screen
 
     public GameScreen(Hardware hardware) : base(hardware)
     {
-        imgBackgroud = new Image("imgs/background2.png",932,600);
+        try
+        {
+            imgBackgroud = new Image("imgs/background2.png", 932, 600);
+        }
+        catch (System.Exception e)
+        {
+
+            throw e;
+        }
     }
 
     private void moveCharacter()
